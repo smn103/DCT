@@ -1,0 +1,141 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>DCT - Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+  <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+  <link rel="stylesheet" href="assets/css/Circle-Nav.css">
+  <link rel="stylesheet" href="assets/css/Rounded-Button.css">
+  <link rel="stylesheet" href="assets/css/sidebar-with-hamburher-1.css">
+  <link rel="stylesheet" href="assets/css/sidebar-with-hamburher.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text] {
+      font-family: Montserrat;
+      font-size: 20px;
+      color: #FFFFFF;
+      outline: 0;
+      border-width: 0 0 2px;
+      margin-right: 80px;
+      display: inline-block;
+      text-align: left;
+      float: right;
+      width: 60%;
+      height: 50px;
+      background-color: #000000;
+
+    }
+
+    input[type=password] {
+      font-family: Montserrat;
+      font-size: 20px;
+      color: #FFFFFF;
+      outline: 0;
+      border-width: 0 0 2px;
+      margin-right: 80px;
+      display: inline-block;
+      text-align: left;
+      float: right;
+      width: 60%;
+      height: 50px;
+      background-color: #000000;
+
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    .column {
+      float: left;
+      height: 100vh;
+    }
+
+    .left {
+      width: 70%;
+      height: 100vh;
+    }
+
+    .right {
+      width: 30%;
+      height: 100vh;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .center {
+      display: block;
+      margin-top: 20%;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="column left" style="background-color:#FFFFFF;">
+      <img src="{%static 'img/group2.png'%}" height="500" width="500" class="center">s
+    </div>
+    <div class="column right" style="background-color:#000000;">
+      <div style="font-size: 40px;color: white;font-family:Montserrat ">DCT</div>
+      <br style=line-height:5>
+      <div style="font-size: 40px;color: white;font-family:Montserrat">
+        <center>Sign In</center>
+        <p style="font-size: 30px;color: white;font-family:Montserrat;text-align: center;">Hello!Lets Start</p>
+      </div>
+      <br style=line-height:5>
+      <div>
+        <form action="login" method="post">
+          {% csrf_token %}
+          <div>
+            <input type="text" id="phone" name="phone" placeholder="Phone"
+              style="font-family: Montserrat;font-size: 20px;color:#FFFFFF;margin-top: 15px;">
+            <br style=line-height:6>
+          </div>
+          <div>
+            <input type="password" id="password" name="password" placeholder="Password">
+            <br style=line-height:5>
+          </div>
+          </br></br></br></br></br>
+          <div>
+            <center><button type="submit" class="btn btn-primary" style="color: #FFFFFF;">Log In</button></center>
+          </div>
+          </form>
+          {% for message in messages %}
+
+                    <div class="alert alert-success">
+                        <a class="close" href="{% url 'login'%}" data-dismiss="alert">×</a>
+
+                        {{ message }}
+
+                    </div>
+            {% endfor %}
+          <br>
+         <center> <button type="submit" class="btn btn-primary" style="color: #FFFFFF;"><a href="{% url 'Register'%}" style="color: white;">Don't Have an Account? Sign Up Today</a></button></center>
+         <br> <center><button type="submit" class="btn btn-primary" style="color: #FFFFFF;"><a href="{% url 'password_reset'%}" style="color: white;">Forgot Password?</a></button></center>
+      </div>
+
+
+    </div>
+
+</body>
+
+</html>

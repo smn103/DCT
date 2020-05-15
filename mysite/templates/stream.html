@@ -1,0 +1,18 @@
+{% extends 'post.html' %}
+{%load static %}
+{% block title %} Stream Now{% endblock %}
+{% block content %}
+    <br>
+    <p>Record a Live Stream</p>
+    <video src="" id="livestream" autoplay controls></video>
+    <br><br>
+    <p> OR </p><br>
+    <p> UPLOAD </p><br>
+    <form method = "post" enctype="multipart/form-data"> 
+        {% csrf_token %} 
+        {{ form.as_p }} 
+        <button type="submit">Upload</button> <br>
+        <br>
+        {%endblock%}
+
+        

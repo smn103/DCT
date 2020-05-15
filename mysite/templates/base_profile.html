@@ -1,0 +1,127 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{{user.username}} - Profile</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css '%} ">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css '%} ">
+    <link rel="stylesheet" href="{% static 'fonts/simple-line-icons.min.css '%} ">
+    <link rel="stylesheet" href="{% static 'css/Bootstrap-4---Team-Members.css '%} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="{% static 'css/Mockup-iPhone-6S.css '%} ">
+    <link rel="stylesheet" href="{% static 'css/smoothproducts.css '%} ">
+</head>
+<style>
+    body {
+        background-image: url("{% static 'img/Mask Group 10.png' %}");
+    }
+</style>
+
+<body style="background-size: 100% 100%;padding: 0;background-repeat: no-repeat;background-attachment: fixed;">
+
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar"
+        style="padding-left: 1px;padding-right: 1px;">
+        <div class="container"><a class="navbar-brand logo" href="#"
+                style="margin-right: 26px;margin-left: -32px;padding-right: 7px;padding-left: -4px;">D C T</a><button
+                data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle
+                    navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1"
+                style="padding-right: -13px;padding-left: 36px;margin-bottom: 0px;margin-right: -61px;">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link " href="{% url  'home' %}"
+                            style="font-size: 16px;">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'trending' %}"
+                            style="font-size: 16px;">Trending</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'celeb'%}"
+                            style="font-size: 16px;">Discover</a></li>
+                    <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link"
+                            href="{% url  'recently_added' %}" style="font-size: 16px;">Recently Added&nbsp;</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'profile' %}"
+                            style="font-size: 16px;">Welcome, {{user.username}}</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'logout' %}"
+                            style="font-size: 16px;">Logout</a></li>
+                    {% endif %}
+                    <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link"
+                            href="{% url 'upload'%}" style="font-size: 16px;">Stream Now&nbsp;<i
+                                class="fas fa-greater-than icon"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="  float-right"
+        style="height: auto;margin-top: 75px; width: 300px;background-color: #003152;background-image: url('pic/Rectangle 1.png');background-position: center;">
+        <center> <img src="{{user.profile_pic.url}}"
+                style="height:150px;width: 150px;margin-top:50px;border-radius: 50%;">
+            <div>
+                </br>
+                <a href="{% url 'profile' %}" style="color: white;">
+                    <p style="font-size: 15px;font-family:Montserrat;color: white">{{user.username}}</p>
+                </a>
+                <p style="font-size: 15px;font-family:Montserrat;color: white">{{user.first_name}} {{user.last_name}}
+                </p>
+                <p style="font-size: 12px;font-family:Montserrat;color: white">{{user.bio}}
+                    </br>
+
+                    <a href=" " style="color: white;">{{user.website}}</a>
+                    </br></br>
+                <p style="display: inline-block;font-size: 12px;font-family:Montserrat;color: white ">Followers</br><a
+                        style="color: white;text-decoration: none;" href="">{{user.followers}}</a></p>&nbsp;&nbsp;&nbsp;
+                <p style="display: inline-block;font-size: 12px;font-family:Montserrat;color: white">Coins</br><a
+                        href="" style="color: white;text-decoration: none;">{{user.coins}}</a></p>
+                &nbsp;&nbsp;&nbsp;&nbsp;<p
+                    style="display: inline-block;font-size: 12px;font-family:Montserrat;color: white">Following</br><a
+                        href="" style="color: white;" text-decoration: none;text-decoration:
+                        none;>{{user.following}}</a></p>&nbsp;&nbsp;&nbsp;<p
+                    style="display: inline-block;font-size: 12px;font-family:Montserrat;color: white">Live
+                    Streams</br><a href="" style="color: white; text-decoration: none;">{{user.streams}}</a></p>
+                </p>
+        </center>
+        <button
+            style="display: inline-block; border-radius: 25px;color: white;background-color: transparent;margin-left: 50px;font-size: 12px;font-family:Montserrat;"><a
+                href="{% url 'edit_profile' %}">Edit Profile</a> </button>
+        <button
+            style="display: inline-block; border-radius: 25px;color: white;background-color: transparent;font-size: 12px;font-family:Montserrat;"><a
+                href="{% url 'change_password' %}">Change Password</a> </button>
+        </br><br>
+        <center> <button
+                style="display: inline-block; border-radius: 25px;color: white;background-color: transparent;font-size: 12px;font-family:Montserrat;"><a
+                    href="{% url 'pricing' %}">Upgrade Subcription</a> </button></center>
+        <br> <br>     
+        <p class="text-left"
+    style="font-size: 15px;display: inline-block;padding-left: 20px;font-family:Montserrat;color: white">Recent
+    Videos</p>
+
+<div class="row" style=" float: left;padding-left: 20px;padding-bottom: 20px;column-count: 3;">
+    {%for vid in vids %}
+    <span>
+        <a href="{% url 'post' vid.videoid %}" style="padding-right: 10px;">
+            <video src="{{vid.video.url}}" style="height: 130px;width: 87px;">
+        </a>
+    </span>
+    {% endfor %}
+
+
+</div>
+<center><button
+        style="border-radius: 21px;color: white;background-color: transparent;font-size: 12px;font-family:Montserrat;">
+        Load More</button></center>
+</div>   
+    {%block content%}
+   
+
+    {%endblock%}
+
+    <script src="{%static 'js/jquery.min.js'%}"></script>
+    <script src="{%static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="{%static 'js/smoothproducts.min.js'%}"></script>
+    <script src="{%static 'js/theme.js'%}"></script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome5-overrides.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar-2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navbar---Apple-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navbar---Apple.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Team-Boxed.css' %}">
+</head>
+<style>
+    body {
+        background-image: url("{% static 'img/pricing.png' %}");
+    }
+</style>
+
+<body id="page-top">
+    <div>
+        <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar"
+            style="padding-left: 1px;padding-right: 1px;">
+            <div class="container"><a class="navbar-brand logo" href="#"
+                    style="margin-right: 26px;margin-left: -32px;padding-right: 7px;padding-left: -4px;">D C
+                    T</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span
+                        class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1"
+                    style="padding-right: -13px;padding-left: 36px;margin-bottom: 0px;margin-right: -61px;">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link " href="{% url  'home' %}"
+                                style="font-size: 16px;">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'trending' %}"
+                                style="font-size: 16px;">Trending</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'celeb' %}"
+                                style="font-size: 16px;">Discover</a></li>
+                                <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link"
+                                    href="{% url  'recently_added' %}" style="font-size: 16px;">Recently Added&nbsp;</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'profile' %}"
+                                style="font-size: 16px;">Welcome, {{user.username}}</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'logout' %}"
+                                style="font-size: 16px;">Logout</a></li>
+                        {% endif %}
+                        
+                        <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link"
+                                href="{% url  'upload' %}" style="font-size: 16px;">Stream Now&nbsp;<i
+                                    class="fas fa-greater-than icon"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <span>
+        <a href="">
+            <img src="{% static 'img/Path 715.png' %}"
+                style="width: 60px;height: 30px;float: left;margin-top: 300px;padding-left:50px; ">
+        </a>
+    </span>
+
+    <span>
+        <a href="">
+            <img src="{% static 'img/Path 714.png' %}"
+                style="width: 60px;height: 30px;float: right;margin-top: 300px;padding-right:50px; ">
+        </a>
+    </span>
+    <center>
+        <div style="background-color: white;height: 300px;width: 80%;margin-top: 15%">
+            <img src="{% static 'img/g1.jpg' %}" style="height: 300px;width: 500px;float: left;">
+            <img src="{% static 'img/profile.png' %}"
+                style="height: 90px;width: 90px;float: left;margin-top:2px;padding-left: 20px;padding-top: 26px">
+            <h4 class="text-left  "
+                style="margin-bottom: 0px;margin-top: -67px;padding-top: 30px;font-size: 26px;font-family:Montserrat;">
+                &nbsp; &nbsp; &nbsp; @danialLavez<button type="submit"
+                    style="background-color: transparent;border-radius: 12px;width: 110px;height: 26px;color: black;margin-left: 130px;font-size: 18px;">Subscribe</button>
+            </h4>
+            <h4 class="text-left  "
+                style="margin-bottom: 3px;margin-top: -21px;font-size: 18px;padding-right: -4px;padding-left: 12px;padding-top: 18px;font-family:Montserrat ">
+                &nbsp; &nbsp; &nbsp; &nbsp;#dct#trending#party#happy</h4>
+            <div style="font-family:Montserrat; font-size: 19px;float: left;padding-left: 20px;padding-top: 10px;">
+                <img src="{% static 'img/h.png' %}">200k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+                    src="{% static 'img/coin.png' %}">209&nbsp;&nbsp;&nbsp;&nbsp; <img
+                    src="{% static 'img/comm.png' %}">38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+                    src="{% static 'img/ins.png' %}">&nbsp;&nbsp;&nbsp;&nbsp;<img
+                    src="{% static 'img/fb.png' %}">&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/tik.png' %}">
+
+            </div>
+        </div>
+        <span>
+            <a href="">
+                <img src="{% static 'img/Group 724.png' %}"
+                    style="width: 80px;height: 30px;float: right;padding-right:20px;margin-top: -300px;padding-left: 20px; ">
+            </a>
+        </span>
+        <div style="background-color: white;height: 300px;width: 80%;float: left;margin-left:86px;margin-bottom: 5%">
+            <img src="{% static 'img/g2.png' %}" style="height: 300px;width: 250px;float: left;">
+            <img src="{% static 'img/g3.png' %}" style="height: 300px;width: 250px;float: left;">
+            <div style="width: 250px;display: inline-block;">
+                <img src="{% static 'img/profile.png' %}"
+                    style="height: 51px;width: 50px;float: left;margin-left: -10px;margin-top: 2px">
+                <h4 class="text-left  "
+                    style="margin-bottom: 0px;margin-top: -90px;padding-top: 80px;font-size: 13px;font-family:Montserrat;margin-right: 110px;margin-left: -30px;">
+                    &nbsp; &nbsp; &nbsp; @danialLavez</h4><button type="submit"
+                    style="background-color: transparent;border-radius: 12px;width: 65px;height: 26px;color: black;font-size: 12px; float: right;margin-right: -10px;margin-top: -10px;margin-left: -5px;">Subscribe</button>
+                <h4 class="text-left  "
+                    style="margin-bottom: 3px;margin-top: -42px;font-size: 9px;padding-right: -4px;padding-left: -10px;padding-right: 5px;margin-right: 2px;padding-top: 46px;font-family:Montserrat ">
+                    &nbsp; &nbsp; &nbsp; &nbsp;#dct#trending#party#happy</h4>
+                <div style="font-family:Montserrat; font-size: 9px;float: left;padding-left: 5px;padding-top: 10px;">
+                    <img src="{% static 'img/h.png' %}">200k<img src="{% static 'img/coin.png' %}">209<img
+                        src="{% static 'img/comm.png' %}">38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+                        src="{% static 'img/ins.png' %}" style="width: 20px;height: 20px;">&nbsp;&nbsp;&nbsp;<img
+                        src="{% static 'img/fb.png' %}" style="width: 20px;height: 20px;"
+                        style="width: 20px;height: 20px;">&nbsp;&nbsp;&nbsp;<img src="{% static 'img/tik.png' %}"
+                        style="width: 20px;height: 20px;">
+
+                </div>
+            </div>
+            <div style="width: 250px;display: inline-block;">
+                <img src="{% static 'img/profile.png' %}"
+                    style="height: 51px;width: 70px;float: left;padding-left: 20px;padding-top: 1px">
+                <h4 class="text-left  "
+                    style="margin-bottom: 0px;margin-top: -90px;padding-top: 80px;font-size: 13px;font-family:Montserrat;margin-right: 80px">
+                    &nbsp; &nbsp; &nbsp; @danialLavez</h4><button type="submit"
+                    style="background-color: transparent;border-radius: 12px;width: 65px;height: 26px;color: black;font-size: 12px; float: right;margin-right: -30px;margin-top: -10px;">Subscribe</button>
+                <h4 class="text-left  "
+                    style="margin-bottom: 3px;margin-top: -48px;font-size: 9px;padding-right: -4px;padding-left: 12px;padding-top: 40px;font-family:Montserrat ">
+                    &nbsp; &nbsp; &nbsp; &nbsp;#dct#trending#party#happy</h4>
+                <div style="font-family:Montserrat; font-size: 9px; float: left;padding-left: 5px;padding-top: 10px;">
+                    <img src="{% static 'img/h.png' %}">200k<img src="{% static 'img/coin.png' %}">209<img
+                        src="{% static 'img/comm.png' %}">38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+                        src="{% static 'img/ins.png' %}" style="width: 20px;height: 20px;">&nbsp;&nbsp;&nbsp;<img
+                        src="{% static 'img/fb.png' %}" style="width: 20px;height: 20px;"
+                        style="width: 20px;height: 20px;">&nbsp;&nbsp;&nbsp;<img src="{% static 'img/tik.png' %}"
+                        style="width: 20px;height: 20px;">
+
+                </div>
+            </div>
+        </div>
+
+        </section>
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="{% static 'js/agency.js' %}"></script>
+        <script src="{% static 'js/Navbar---Apple.js' %}"></script>
+</body>
+
+</html>

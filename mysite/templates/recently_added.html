@@ -1,0 +1,23 @@
+{% extends "celeb.html" %}
+
+
+{% load static %}
+{% block title %}Recently Added {%endblock%}
+{% block content %}
+<center>
+    {% for vid in vids %}
+    <div class="card" style="width: 18rem;">
+      <a href="{% url 'post' vid.videoid %}"><video class="card-img-top" src="{{vid.video.url}}" alt="" autoplay controls muted></video></a>
+        <div class="card-body">
+          <h2 class="card-title">{{vid.name}}</h2>
+          {{vid.uploaded}} <br>
+          Added by {{vid.phone.username}}
+          
+        </div>
+      </div>
+      
+      <br>
+      <br> 
+      {% endfor %}
+    </center>>
+{% endblock %}

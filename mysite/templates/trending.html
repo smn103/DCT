@@ -1,0 +1,163 @@
+{% load static %}
+  
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome5-overrides.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar-2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navbar---Apple-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navbar---Apple.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Team-Boxed.css' %}">
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="padding-left: 1px;padding-right: 1px;">
+        <div class="container"><a class="navbar-brand logo" href="#" style="margin-right: 26px;margin-left: -32px;padding-right: 7px;padding-left: -4px;">D C T</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1" style="padding-right: -13px;padding-left: 36px;margin-bottom: 0px;margin-right: -61px;">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url  'home' %}" style="font-size: 16px;">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'trending' %}" style="font-size: 16px;">Trending</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'celeb' %}" style="font-size: 16px;">Discover</a></li>
+                    <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link"
+                      href="{% url  'recently_added' %}" style="font-size: 16px;">Recently Added&nbsp;</a></li>
+{% if user.is_authenticated %}
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'profile' %}" style="font-size: 16px;">Welcome, {{user.username}}</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'logout' %}" style="font-size: 16px;">Logout</a></li>
+                    {% endif %}
+                    <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link" href="{% url  'upload' %}" style="font-size: 16px;">Stream Now&nbsp;<i class="fas fa-greater-than icon"></i></a></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    </div>
+    <section id="team" class="bg-white" style="background-color: rgb(255,255,255);padding-top: 86px;float: left">
+<div class="row">
+        <div class="col-sm-10" style="margin-left: 10px;">
+            <h4 class="text-left" style="margin-top: 21px;margin-bottom: 39px;padding-top: 0px;width: 351px;font-size: 45px;font-family:Montserrat ;padding-left: 55px;">&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Trending&nbsp;&nbsp;</h4>
+            <p class="text-left" style="font-family: Montserrat;color: grey;padding-bottom: 50px;padding-left: 74px;font-size: 25px;">Watch the latest videos from our community</p>
+            <p class="text-left" style="font-family: Montserrat;color: black;padding-bottom: 50px;padding-left: 74px;font-size: 45px;">Solo Trending </p>
+        </div>
+                <div class="col-sm-4" style="width: 600px;  height: 600px;float: left" >
+                        <img src="{% static 'img/2.jpg' %}" style="height: 400px;border-radius:21px;width: 350px;">
+                        <h4><i  style="font-size: 39px;"></i>&nbsp;Danial lorez-a DCT show  <p style="color: grey;font-family: Montserrat;font-size: 20px;"> daniallorez&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;294k likes</p></h4>
+                        <br/><br/>
+                </div>
+
+                <div class="col-sm-4" style="width: 440px;  height: 450px;float: left;padding-left: 15px;"  >
+                        <img src="{% static 'img/2.jpg' %}" style="height: 400px;border-radius:21px;width: 350px;">
+                        <h4><i class="fas fa-caret-right" style="font-size: 39px;"></i>&nbsp;Danial lorez-a DCT show <p style="color: grey;font-family: Montserrat;font-size: 20px;"> <p style="color: grey;font-family: Montserrat;font-size: 20px;"> daniallorez&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;294k likes&nbsp;&nbsp;</p></h4>
+                        <br/><br/>
+                </div>
+                <div class="col-sm-4" style="margin-left: -30px;  float: right; width: 310"  >
+                    <div class="border rounded border-info float-right team-member border-dark" style="margin-right: 14px;margin-left: 75px;width: 310px;padding-left: 14px;padding-right: 32px;margin-top: 15px;">
+                        <h4 class="text-left">Suggested Accounts</h4>
+                        <h4 class="text-left" style="margin-top: 21px;margin-bottom: 1px;padding-top: 0px;width: 272px;">&nbsp; &nbsp;<img class="rounded-circle float-left mx-auto" src="{% static 'img/ted.png' %}" style="font-size: 12px;width: 60px;height: 60px;">Mariana&nbsp; &nbsp;<a href="#"><i class="fas fa-greater-than float-right" style="color: #868e96;"></i></a>&nbsp;&nbsp;</h4>
+                        <p
+                            class="text-left text-muted" style="margin-top: -3px;">&nbsp; &nbsp; &nbsp;@mariana.14</p>
+                            <h4 style="margin-top: 24px;width: 272px;">&nbsp; &nbsp;<img class="rounded-circle float-left mx-auto" src="{% static 'img/1587461814755_elon musk (1).png' %}" style="font-size: 12px;width: 60px;height: 60px;">Elon Musk&nbsp; &nbsp;<a href="#"><i class="fas fa-greater-than float-right" style="color: #868e96;"></i></a>&nbsp;&nbsp;</h4>
+                            <p
+                                class="text-left text-muted" style="margin-top: -5px;">&nbsp; &nbsp; &nbsp; @traveler</p>
+                                <h4 style="margin-top: 24px;width: 272px;">&nbsp; &nbsp;<img class="rounded-circle float-left mx-auto" src="{% static 'img/mark_picture.png' %}" style="font-size: 12px;width: 60px;height: 60px;">Mark Zuck&nbsp; &nbsp;<a href="#"><i class="fas fa-greater-than float-right" style="color: #868e96;"></i></a></h4>
+                                <p
+                                    class="text-left text-muted" style="margin-top: 2px;">&nbsp; &nbsp; &nbsp; &nbsp; @imCEO</p>
+                    </div>
+                    <div class="border rounded border-info float-right team-member border-dark" style="margin-right: 14px;margin-left:75px;width: 310px;padding-left: 30px;margin-left: 75px;padding-right: 32px;margin-top: 60px;">
+                        <h4 class="text-left">Suggested Accounts</h4>
+                        <h4 class="text-left" style="margin-top: 21px;margin-bottom: 1px;padding-top: 0px;width: 272px;">&nbsp; &nbsp;<img class="rounded-circle float-left mx-auto" src="{% static 'img/ted.png' %}" style="font-size: 12px;width: 60px;height: 60px;">Mariana&nbsp; &nbsp;<a href="#"><i class="fas fa-greater-than float-right" style="color: #868e96;"></i></a>&nbsp;&nbsp;</h4>
+                        <p
+                            class="text-left text-muted" style="margin-top: -3px;">&nbsp; &nbsp; &nbsp;@mariana.14</p>
+                            <h4 style="margin-top: 24px;width: 272px;">&nbsp; &nbsp;<img class="rounded-circle float-left mx-auto" src="{% static 'img/1587461814755_elon musk (1).png' %}" style="font-size: 12px;width: 60px;height: 60px;">Elon Musk&nbsp; &nbsp;<a href="#"><i class="fas fa-greater-than float-right" style="color: #868e96;"></i></a>&nbsp;&nbsp;</h4>
+                            <p class="text-left text-muted" style="margin-top: -5px;">&nbsp; &nbsp; &nbsp; @traveler</p>
+                                <h4 style="margin-top: 24px;width: 272px;">&nbsp; &nbsp;<img class="rounded-circle float-left mx-auto" src="{% static 'img/mark_picture.png' %}" style="font-size: 12px;width: 60px;height: 60px;">Mark Zuck&nbsp; &nbsp;<a href="#"><i class="fas fa-greater-than float-right" style="color: #868e96;"></i></a></h4>
+                                <p
+                                    class="text-left text-muted" style="margin-top: 2px;">&nbsp; &nbsp; &nbsp; &nbsp; @imCEO</p>
+                    </div>
+        </div>
+    </div>
+         <div class="col-lg-12 text-center">
+            <h4 class="text-left" style="margin-top: -20px;margin-bottom: 39px;padding-top: 0px;width: 351px;font-size: 45px;font-family:Montserrat ;padding-left: 55px;">Duet Trending</h4>
+        </div>
+         <div class="col-sm-4" style=" width: 550px;  height: 600px;float: left;" >
+                                <div class="col-sm-4" style="display: inline-block;">
+                                     <img src="{% static 'img/2.jpg' %}" style="height: 550px;border-radius:21px;width: 275px;">
+                                </div>
+                                    <div class="col-sm-4" style="display: inline-block;margin-left: 76px;">
+                                     <img src="{% static 'img/2.jpg' %}" style="height: 550px;border-radius:21px;width: 275px;">
+                                 </div>
+                             
+                        <h4><i class="fas fa-caret-right" style="font-size: 39px;"></i>&nbsp;Danial lorez-a DCT show <p style="color: grey;font-family: Montserrat;font-size: 20px;"> daniallorez&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;294k likes</p></h4>
+                        <br/><br/>
+                </div>
+                <div class="col-sm-4" style="width: 700px;  height: 600px;float: left;padding-left: 110px;"  >
+                       <div class="col-sm-4" style="display: inline-block;">
+                                     <img src="{% static 'img/2.jpg' %}" style="height: 550px;border-radius:21px;width: 275px;">
+                                </div>
+                                <div class="col-sm-4" style="display: inline-block;margin-left: 76px;">
+                                     <img src="{% static 'img/2.jpg' %}" style="height: 550px;border-radius:21px;width: 275px;">
+                                 </div>
+                             
+                        <h4><i class="fas fa-caret-right" style="font-size: 39px;"></i>&nbsp;Danial lorez-a DCT show <p style="color: grey;font-family: Montserrat;font-size: 20px;"> daniallorez&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;294k likes</p></h4>
+                </div>
+                <div class="col-sm-4 text-center" >
+            <h4 class="text-left" style="width: 601px;font-size: 45px;font-family:Montserrat ;padding-left: 55px;padding-bottom: 60px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Multiple Trending</h4>
+        </div>
+<div class="col-sm-4" style=" width: 700px;display: inline-block;  height: 600px; margin-left: 10px;">
+<div class="row">
+  <div class="col-sm-4">
+    <img src="{% static 'img/2.jpg' %}" style="width: 275px; border-radius:21px;height: 275px;">
+
+  </div>
+  <div class="col-sm-4">
+    <img src="{% static 'img/2.jpg' %}" style="width: 275px; border-radius:21px;height: 275px;margin-left:77px;">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <img src="{% static 'img/2.jpg' %}" style="width:500px;border-radius:21px;height: 275px;">
+  </div>
+</div>
+<h4><i class="fas fa-caret-right" style="font-size: 39px;"></i>&nbsp;Danial lorez-a DCT show <p style="color: grey;font-family: Montserrat;font-size: 20px;"> daniallorez &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;294k likes</p></h4>
+</div> 
+
+<div class="col-sm-4" style=" width: 700px;padding-left: 90px;display: inline-block;  height: 600px; margin-left: 10px;">
+<div class="row">
+  <div class="col-sm-4">
+    <img src="{% static 'img/2.jpg' %}" style="width: 275px; border-radius:21px;height: 275px;">
+
+  </div>
+  <div class="col-sm-4">
+    <img src="{% static 'img/2.jpg' %}" style="width: 275px; border-radius:21px;height: 275px;margin-left:77px;">
+  </div>
+</div>
+  <div class="row">
+  <div class="col-sm-4">
+    <img src="{% static 'img/2.jpg' %}" style="width: 275px; border-radius:21px;height: 275px;">
+
+  </div>
+  <div class="col-sm-4">
+    <img src="{% static 'img/2.jpg' %}" style="width: 275px; border-radius:21px;height: 275px;margin-left:77px;">
+  </div>
+</div>
+<h4><i class="fas fa-caret-right" style="font-size: 39px;"></i>&nbsp;Danial lorez-a DCT show<p style="color: grey;font-family: Montserrat;font-size: 20px;"> daniallorez &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;294k likes</p></h4>
+    <script src="{% static 'js/js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="{% static 'js/js/agency.js' %}"></script>
+    <script src="{% static 'js/js/Navbar---Apple.js' %}"></script>
+</body>
+</html>
+

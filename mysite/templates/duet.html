@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Duet</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome5-overrides.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar-2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navbar---Apple-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navbar---Apple.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Team-Boxed.css' %}">
+</head>
+<style>
+    body{
+        background-image: url("{% static 'img/pricing.png' %}");
+    }
+</style>
+<body id="page-top">
+    <div>
+         <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="padding-left: 1px;padding-right: 1px;">
+        <div class="container"><a class="navbar-brand logo" href="#" style="margin-right: 26px;margin-left: -32px;padding-right: 7px;padding-left: -4px;">D C T</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1" style="padding-right: -13px;padding-left: 36px;margin-bottom: 0px;margin-right: -61px;">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link " href="{% url  'home' %}" style="font-size: 16px;">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'trending' %}" style="font-size: 16px;">Trending</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'celeb' %}" style="font-size: 16px;">Discover</a></li>
+                    <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link"
+                        href="{% url  'recently_added' %}" style="font-size: 16px;">Recently Added&nbsp;</a></li>
+{% if user.is_authenticated %}
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'profile' %}" style="font-size: 16px;">Welcome, {{user.username}}</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'logout' %}" style="font-size: 16px;">Logout</a></li>
+                    {% endif %}
+                    <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link" href="{% url  'upload' %}" style="font-size: 16px;">Stream Now&nbsp;<i class="fas fa-greater-than icon"></i></a></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    </div>
+    <center >
+    <div style="background-color: white;height: 300px;width: 80%;margin-top: 15%">
+        <img src="{% static 'img/g1.jpg' %}" style="height: 300px;width: 500px;float: left;">
+            <img src="{% static 'img/profile.png' %}" style="height: 90px;width: 90px;float: left;padding-left: 20px;padding-top: 20px"><p>
+             <h4 class="text-left  " style="margin-bottom: 0px;margin-top: -67px;padding-top: 30px;font-size: 26px;font-family:Montserrat;">&nbsp; &nbsp; &nbsp; @danialLavez<button type="submit" style="background-color: transparent;border-radius: 12px;width: 110px;height: 26px;color: black;margin-left: 130px;font-size: 18px;">Subscribe</button></h4>
+                                            <h4
+                                                class="text-left  " style="margin-bottom: 3px;margin-top: -21px;font-size: 18px;padding-right: -4px;padding-left: 12px;padding-top: 18px;font-family:Montserrat ">&nbsp; &nbsp; &nbsp; &nbsp;#dct#trending#party#happy</h4>
+                                                    <div style="font-family:Montserrat; font-size: 19px;float: left;padding-left: 20px;padding-top: 10px;">
+                                                        <img src="{% static 'img/h.png' %}">200k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/coin.png' %}">209&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/comm.png' %}">38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/ins.png' %}">&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/fb.png' %}">&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/tik.png' %}">
+
+                                                    </div>
+        </div>
+        <div style="background-color: white;height: 300px;width: 80%;float: left;margin-left: 135px;margin-bottom: 5%">
+        <img src="{% static 'img/g2.png' %}" style="height: 300px;width: 500px;float: left;">
+            <img src="{% static 'img/profile.png' %}" style="height: 90px;width: 90px;float: left;padding-left: 20px;padding-top: 20px"><p>
+             <h4 class="text-left  " style="margin-bottom: 0px;margin-top: -67px;padding-top: 80px;font-size: 26px;font-family:Montserrat;">&nbsp; &nbsp; &nbsp; @danialLavez<button type="submit" style="background-color: transparent;border-radius: 12px;width: 110px;height: 26px;color: black;margin-left: 130px;font-size: 18px;">Subscribe</button></h4>
+                                            <h4
+                                                class="text-left  " style="margin-bottom: 3px;margin-top: -21px;font-size: 18px;padding-right: -4px;padding-left: 12px;padding-top: 18px;font-family:Montserrat ">&nbsp; &nbsp; &nbsp; &nbsp;#dct#trending#party#happy</h4>
+                                                    <div style="font-family:Montserrat; font-size: 19px;float: left;padding-left: 20px;padding-top: 10px;">
+                                                        <img src="{% static 'img/h.png' %}">200k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/coin.png' %}">209&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/comm.png' %}">38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/ins.png' %}">&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/fb.png' %}">&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/tik.png' %}">
+
+                                                    </div>
+        </div>
+</center>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="{% static 'js/agency.js' %}"></script>
+    <script src="{% static 'js/Navbar---Apple.js' %}"></script>
+</body>
+</html>

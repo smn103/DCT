@@ -1,0 +1,28 @@
+{% extends "base_profile.html" %}
+{%load static%}
+
+
+{% block content %}
+
+<h4 class="text-left"
+    style="margin-top: 10px;margin-bottom: 39px;width: 700px;font-size: 45px;font-family:Montserrat ;padding-left: 220px;padding-top: 150px; color: white;">
+    Recent Live Streams</h4>
+
+<div class="row" style=" width: 70%;float: left;padding-left: 220px;padding-bottom: 20px; column-count: 3;">
+    {%for vid in vids %}
+
+
+
+    <span>
+        <a href="{% url 'post' vid.videoid %}">
+
+            <video src="{{vid.video.url}}" alt="" muted
+                style="height:250px;width:200px;border-radius:21px;padding: 20px;"></video>
+        </a>
+    </span>
+    {% endfor %}
+</div>
+</br>
+
+
+{% endblock %}

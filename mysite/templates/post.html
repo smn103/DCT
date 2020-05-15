@@ -1,0 +1,348 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %} Stream {% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">
+    <link rel="stylesheet" href="{%static 'fonts/fontawesome-all.min.css'%}">
+    <link rel="stylesheet" href="{%static 'fonts/ionicons.min.css'%}">
+    <link rel="stylesheet" href="{%static 'css/Footer-Dark.css'%}">
+    <link rel="stylesheet" href="{%static 'css/login-full-page-bs4.css'%}">
+    <link rel="stylesheet" href="{%static 'css/Login-screen.css'%}">
+    <style>
+        body {
+            background: url("/static/img/pricing.png")
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="background-size: 100% 100%;padding: 0;background-repeat: no-repeat;background-attachment: fixed;">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar"
+        style="padding-left: 1px;padding-right: 1px;">
+        <div class="container"><a class="navbar-brand logo" href="#"
+                style="margin-right: 26px;margin-left: -32px;padding-right: 7px;padding-left: -4px;">D C T</a><button
+                data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle
+                    navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1"
+                style="padding-right: -13px;padding-left: 36px;margin-bottom: 0px;margin-right: -61px;">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link " href="{% url  'home' %}"
+                            style="font-size: 16px;">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'trending' %}"
+                            style="font-size: 16px;">Trending</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'celeb'%}"
+                            style="font-size: 16px;">Discover</a></li>
+                    <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link"
+                            href="{% url  'recently_added' %}" style="font-size: 16px;">Recently Added&nbsp;</a></li>
+
+                    {% if user.is_authenticated %}
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'profile'%}"
+                            style="font-size: 16px;">Welcome, {{user.username}}</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'logout' %}"
+                            style="font-size: 16px;">Logout</a></li>
+                    {% endif %}
+                    <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link"
+                            href="{% url  'upload' %}" style="font-size: 16px;">Stream Now&nbsp;<i
+                                class="fas fa-greater-than icon"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <center>
+        <div
+            style="background-color: white;height: auto;width: 80%;margin-top: 15%;margin-bottom: 5%;background-attachment: fixed;overflow: auto;">
+            {% block content%}
+            <div style="float: left;">
+                <video src="{{post.video.url}}" alt="" autoplay controls muted
+                    style="height: 650px;width: 500px;background-size: cover;"></video>
+                <br><br>
+                <h4 style="font-size: 30px; float: left;">
+                    &nbsp; &nbsp; &nbsp; &nbsp;{{post.name}}</h4>
+
+                <div>
+                    <p style=" font-size: 15px;float: right;">Posted on {{post.uploaded}}</p>
+                    <br><br><br>
+                    <center>
+                        <p class="lead">{{post.description}}</p>
+                    </center>
+                    <hr style="margin-top: 40px;size: auto;">
+                    <div>
+                        <p class="btn btn-light" id="likes_count"
+                            onclick="document.getElementById('likes_user').style.display='block'">{{likes_count}} Likes
+                        </p>
+
+                        {% if user.is_authenticated %}
+                        <button
+                            style="background-color: transparent;border-radius: 12px;width: 110px;height: 26px;color: black;margin-left: 130px;font-size: 18px;"
+                            class="like" id="{{post.videoid}}">
+
+                            {% if is_liked %}
+                            <a href="{% url 'like_dislike_post' %}" id="like_text">Dislike</a>
+                            {% else %}
+                            <a href="{% url 'like_dislike_post' %}" id="like_text">Like</a>
+                            {% endif %}
+                        </button>
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <img src="{{post.phone.profile_pic.url}}" style="height:150px;width: 150px;border-radius: 50%;float: left;">
+            <br>
+            <button type="submit"
+                style="background-color: transparent;border-radius: 12px;width: 110px;height: 26px;color: black;margin-left: 130px;font-size: 18px;">Subscribe</button>
+
+            <br>
+
+            {% if user.is_authenticated %}
+            {% if post.phone.username == user.username %}
+
+            <a href="{% url 'profile' %}">
+                <h4 class="text-left  "
+                    style="margin-bottom: 3px;margin-top: -21px;font-size: 26px;padding-right: -4px;padding-left: 12px;padding-top: 18px;">
+                    &nbsp; &nbsp; &nbsp; &nbsp;@{{post.phone.username}}</h4>
+            </a>
+
+            {% else %}
+
+            <a href="{% url 'User_Profile' post.phone.username %}">
+                <h4 class="text-left  "
+                    style="margin-bottom: 3px;margin-top: -21px;font-size: 26px;padding-right: -4px;padding-left: 12px;padding-top: 18px;">
+                    &nbsp; &nbsp; &nbsp; &nbsp;@{{post.phone.username}}</h4>
+            </a>
+            {% endif %}
+
+            {% else %}
+            <a href="{% url 'User_Profile' post.phone.username %}">
+                <h4 class="text-left  "
+                    style="margin-bottom: 3px;margin-top: -21px;font-size: 26px;padding-right: -4px;padding-left: 12px;padding-top: 18px;">
+                    &nbsp; &nbsp; &nbsp; &nbsp;@{{post.phone.username}}</h4>
+            </a>
+
+            {% endif %}
+
+
+
+            <br>
+
+            <hr style="margin-top: 40px;size: auto;">
+
+
+            <div class="text-left"
+                style="float:left;margin-top: 5px;padding-left: 48px;margin-right: 80px; line-height: .8;font-size: 18px; height: auto; width:600px;">
+
+
+
+
+
+                {% if user.is_authenticated %}
+                <!-- Comments Form -->
+                <div class="card my-4">
+                    <h5 class="card-header">Leave a Comment: </h5>
+
+                    <div class="card-body">
+                        <form method="POST" action="{% url 'post' post.videoid %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="user" value="{{user.username}}" />
+
+
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" name="message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Single Comment -->
+                {% for com in comment %}
+                <div class="media mb-4">
+                    <img class="d-flex mr-3 rounded-circle" src="{{com.user.profile_pic.url}}"
+                        style="width: 50px;height:50px;" alt="">
+                    <div class="media-body">
+
+                        <h5 class="mt-0">{{com.user.username}}</h5>
+                        {{com.comment}}
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+            </div>
+
+        </div>
+    </center>
+
+    <div name="likes_user" id="likes_user" class="modal">
+        <form class="modal-content animate">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+            </div>
+            <div class="container">
+                {% for users in user_list %}
+
+                <li>{{users.username}}</li>
+
+
+                {%endfor%}
+
+            </div>
+        </form>
+        {% endblock %}
+    </div>
+</body>
+
+
+<script src="{%static 'js/jquery.min.js'%}"></script>
+<script src="{%static 'bootstrap/js/bootstrap.min.js'%}"></script>
+<script src="{%static 'js/login-full-page-bs4.js'%}"></script>
+<script src="{%static 'js/login-full-page-bs4-1.js'%}"></script>
+<script src="{%static 'js/current-day.js'%}"></script>
+<script>
+    // Get the modal
+
+    var modal = document.getElementById('likes_user');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script>
+    $(".like").click(function (e) {
+        var id = this.id;
+        var href = $('.like').find('a').attr('href');
+        console.log(href, id)
+        e.preventDefault();
+
+        $.ajax({
+            url: href,
+            data: {
+                'likeId': id
+            },
+            success: function (response) {
+                if (response.liked) {
+                    $('#like_text').html("Dislike");
+                }
+                else {
+                    $('#like_text').html("Like")
+                }
+                $('#likes_count').html(response.likes_count + " Likes")
+            }
+        })
+
+
+
+    });
+</script>
+
+<script>
+    navigator.mediaDevices.getUserMedia({
+        video: {
+            width: {
+                min: 640,
+                ideal: 1280,
+                max: 1280
+            },
+            height: {
+                min: 480,
+                ideal: 580,
+                max: 580
+            }
+        }
+    })
+        .then(stream => {
+            document.getElementById("livestream").srcObject = stream;
+        })
+</script>
+
+
+
+
+</html>

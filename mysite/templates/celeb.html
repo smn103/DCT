@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %}Discover{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/simple-line-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Bootstrap-4---Team-Members.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="{% static 'css/Mockup-iPhone-6S.css' %}">
+    <link rel="stylesheet" href="{% static 'css/smoothproducts.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome5-overrides.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar-2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Dark-NavBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navbar---Apple-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navbar---Apple.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Team-Boxed.css' %}">
+    <style>
+        body {margin: 0px;}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="padding-left: 1px;padding-right: 1px;">
+        <div class="container"><a class="navbar-brand logo" href="#" style="margin-right: 26px;margin-left: -32px;padding-right: 7px;padding-left: -4px;">D C T</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1" style="padding-right: -13px;padding-left: 36px;margin-bottom: 0px;margin-right: -61px;">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url  'home' %}" style="font-size: 16px;">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'trending' %}" style="font-size: 16px;">Trending</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'celeb' %}" style="font-size: 16px;">Discover</a></li>
+                    <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link"
+                        href="{% url  'recently_added' %}" style="font-size: 16px;">Recently Added&nbsp;</a></li>
+                    {% if user.is_authenticated %}
+                    
+
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'profile' %}" style="font-size: 16px;">Welcome, {{user.username}}</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" href="{% url  'logout' %}" style="font-size: 16px;">Logout</a></li>
+                    
+                    {% endif %}
+                    <li class="nav-item" role="presentation" style="padding-right: 0px;"><a class="nav-link" href="{% url  'upload' %}" style="font-size: 16px;">Stream Now&nbsp;<i class="fas fa-greater-than icon"></i></a></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    
+    {% block content %}
+    <main class="page landing-page" >
+        <section class="clean-block clean-info dark" style="background-color: rgb(255,255,255);padding-bottom: 62px;">
+            <div class="container" style="padding-right: 1px;padding-left: 1px;margin-left: 2px;margin-right: 4px;width: 1117px;">
+            </div >
+            <img class="float-right device" src="{% static 'img/girl.jpeg' %}" style="height: 1000px;width: 320px;margin-right: 0px;margin-top: 40px;"><img class="float-right device" src="{% static 'img/boy.jpeg' %}" style="margin-left: 14px;margin-left: 60px;margin-top: 40px;padding-left: -19px;height: 1000px; width: 320px;">
+            </section>
+    
+    </main>
+      <p style="padding-left: 90px;font-size: 56px;font-family: Montserrat">CELEB WALL</p>
+    <p style="font-size: 20px;color: #686868;padding-left: 90px;padding-right: 60px; font-family: Montserrat">Person travelling most of the time in a week can get a chance to be featured at our Celeb Wall and can have a chance to get some incentive from the company&nbsp;</p>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <a href="duet" style="padding-left: 90px;color: black;text-decoration: none;font-family: Montserrat;font-size: 42px;">DUET &#10140;</a>
+    <a href="triple" style="padding-left: 90px;color: black;text-decoration: none;font-family: Montserrat;font-size: 42px;">TRIPLE &#10140;</a>
+    <script
+        src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+        <script src="{% static 'js/smoothproducts.min.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+    {%endblock%}
+</body>
+</html>
